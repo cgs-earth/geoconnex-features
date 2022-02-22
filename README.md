@@ -1,0 +1,2 @@
+# geoconnex-features
+This repository hosts code to download, process, and deploy OGC-API features endpoints for persistently-identified versions of prominent water data products for technology demonstration purposes for the geoconnex harvester and knowledge graph. These features are meant for experimental purposes, and will be retired in favor of authoritative versions published by the original provider organizations if and when they participate in the geoconnex system. 
