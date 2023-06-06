@@ -55,19 +55,17 @@ logging:
 
 metadata:
   identification:
-    title: NHDPlusV2 Census Intersection
-    description: National Hydrography Dataset Plus (NHDPlusV2) with Census intersection
-    keywords: &keywords
-      - epa
-      - geofabric
+    title: Features for geoconnex.us
+    description: Features for geoconnex.us hosted by the Center for Geospatial Solutions
+    keywords:
       - hydrography
-      - npdes
+      - cgs
       - iow
       - geospatial
       - api
     keywords_type: theme
     terms_of_service: https://creativecommons.org/licenses/by/4.0/
-    url: https://github.com/cgs-earth/geoconnex-features
+    url: https://geoconnex.us
   license:
     name: CC-BY 4.0 license
     url: https://creativecommons.org/licenses/by/4.0/
@@ -91,17 +89,19 @@ resources:
     type: collection
     title: National Pollutant Discharge Elimination System (NPDES)
     description: National Pollutant Discharge Elimination System (NPDES)
-    keywords: *keywords
+    keywords:
+      - epa
+      - geofabric
     links:
       - &data-source
         type: application/html
         rel: canonical
         title: data source
-        href: https://storage.googleapis.com/nhgf/NPDES_pts.gpkg
+        href: https://storage.googleapis.com/nhgf/NPDES_withMeasure.gpkg
         hreflang: en-US
-    extents: &extents
+    extents:
       spatial:
-        bbox: [-170, 15, -51, 72]
+        bbox: [-124.67615 24.6481, -66.98426 49.0004]
         crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
       temporal:
         begin: null
@@ -115,7 +115,7 @@ resources:
           dbname: ${POSTGRES_DB}
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
-        table: npdes_pts
+        table: npdes_withmeasure
         id_field: source_fea
         uri_field: uri
         geom_field: geom
