@@ -1,6 +1,12 @@
 # geoconnex-features
 This repository hosts code to download, process, and deploy provisional OGC-API features endpoints for persistently-identified features within prominent water data products for technology demonstration purposes for the [geoconnex harvester](https://github.com/internetofwater/harvest.geoconnex.us) and [knowledge graph](https://graph.geoconnex.us), as well as the [Network-Linked Data Index](https://waterdata.usgs.gov/blog/nldi-intro/) . These features are meant for experimental purposes, and will be retired in favor of authoritative versions published by the original provider organizations if and when they participate in the geoconnex system. 
 
+Datasets are organized in the `collections` directory. 
+
+The features are deployed as Geoconnex-compliant landing pages with JSON-LD embedded metadata at https://features.internetofwater.dev. The deployment configuration for these pages is in the `pygeoapi` directory
+
+
+
 ## Targeted datasets
 
 ### NPDES
