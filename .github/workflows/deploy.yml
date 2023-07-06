@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - "master"
-      - "CI"
     paths:
       - "pygeoapi/**"
 
@@ -46,12 +45,8 @@ jobs:
           headers: |-
             content-type: application/x-gzip
 
-      # - name: Push to mysql
-      #   run: |-
-      #     gcloud sql import sql ${{ env.REGISTRY }} gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz \
-      #       --database=${{ env.DATABASE }} \
-      #       --user=${{ env.DBUSER }}
-
-      - name: Test
+      - name: Push to mysql
         run: |-
-          echo gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz
+          gcloud sql import sql ${{ env.REGISTRY }} gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz \
+            --database=${{ env.DATABASE }} \
+            --user=${{ env.DBUSER }}
