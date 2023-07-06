@@ -1,0 +1,57 @@
+name: features.geoconnex.dev pygeoapi build
+
+on:
+  push:
+    branches:
+      - "master"
+      - "CI"
+    paths:
+      - "pygeoapi/**"
+
+env:
+  REGISTRY: reference-features
+  DATABASE: hosted-features
+  DBUSER: root
+
+jobs:
+  upload-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate sql data
+        uses: cgs-earth/hydrodump-action@0.3.1
+        with:
+          username: ${{ secrets.HYDRO_USERNAME }}
+          password: ${{ secrets.HYDRO_PASSWORD }}
+          db: ${{ env.DATABASE }}
+          dbuser: ${{ env.DBUSER }}
+          resource: 495b65e56e994289baaa5feeb401358e
+
+      - name: Set up Cloud SDK
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: ${{ secrets.GCP_SA_TOKEN }}
+
+      - name: Upload backup to GCP Bucket
+        id: upload-files
+        uses: google-github-actions/upload-cloud-storage@v0
+        with:
+          path: .
+          destination: ${{ env.REGISTRY }}
+          gzip: false
+          parent: false
+          glob: "**/*.sql.gz"
+          headers: |-
+            content-type: application/x-gzip
+
+      # - name: Push to mysql
+      #   run: |-
+      #     gcloud sql import sql ${{ env.REGISTRY }} gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz \
+      #       --database=${{ env.DATABASE }} \
+      #       --user=${{ env.DBUSER }}
+
+      - name: Test
+        run: |-
+          echo gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz

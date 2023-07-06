@@ -115,7 +115,7 @@ resources:
           dbname: ${POSTGRES_DB}
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
-        table: npdes_withmeasure
+        table: npdes_pts
         id_field: source_fea
         uri_field: uri
         geom_field: geom
