@@ -122,7 +122,7 @@ resources:
         
     Ohio-NPDES-Individual:
         type: collection
-        title: OHIO EPA NPDES Individual Permit
+        title: OHIO EPA NPDES Individual Permits
         description: OHIO EPA NPDES Individual Permits for Wastewater Treatment Plants
         keywords:
             - Existing Sites
