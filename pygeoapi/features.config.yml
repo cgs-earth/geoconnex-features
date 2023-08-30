@@ -131,7 +131,7 @@ resources:
             - type: application/html
               rel: canonical
               title: data source
-              href: https://data.ca.gov/dataset/gsp-monitoring-data/resource/72612518-e45b-4900-9cab-72b8de09c57d
+              href: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
               hreflang: en-US
         extents:
             spatial:
