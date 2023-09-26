@@ -119,14 +119,14 @@ resources:
         id_field: source_fea
         uri_field: uri
         geom_field: geom
-        
+
   Ohio-NPDES-Individual:
     type: collection
     title: OHIO EPA NPDES Individual Permits
     description: OHIO EPA NPDES Individual Permits for Wastewater Treatment Plants
     keywords:
-        - Existing Sites
-   #   template: jsonld/wwtp.jsonld
+      - Existing Sites
+    #   template: jsonld/wwtp.jsonld
     links:
       - type: application/html
         rel: canonical
@@ -135,7 +135,7 @@ resources:
         hreflang: en-US
     extents:
       spatial:
-        bbox: [-170,15,-51,72]
+        bbox: [-170, 15, -51, 72]
         crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
       temporal:
         begin: null
@@ -145,6 +145,28 @@ resources:
         name: ESRI
         data: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
         id_field: OHIO_EPA_NO
+
+  ne/gages:
+    type: collection
+    title: Nebraska Gages
+    description: Gages from Nebraska Department of Natural Resources
+    keywords:
+      - nebraska
+      - gage
+    links:
+      - <<: *data-source
+        href: https://nednr.aquaticinformatics.net/
+    extents:
+      spatial:
+        bbox: [-104.05, 40.00, -95.31, 43.00]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider
+        table: ne_gages
+        id_field: id
 
   wy/gages:
     type: collection
@@ -158,7 +180,7 @@ resources:
         href: https://seoflow.wyo.gov/
     extents:
       spatial:
-        bbox: [-111.06,40.99,-104.05,45.01]
+        bbox: [-111.06, 40.99, -104.05, 45.01]
         crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
       temporal:
         begin: null
