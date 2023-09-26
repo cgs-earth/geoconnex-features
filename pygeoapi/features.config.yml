@@ -97,11 +97,11 @@ resources:
         type: application/html
         rel: canonical
         title: data source
-        href: https://storage.googleapis.com/nhgf/NPDES_withMeasure.gpkg
+        href: https://www.hydroshare.org/resource/495b65e56e994289baaa5feeb401358e/data/contents/npdes/NPDES_pts.gpkg
         hreflang: en-US
     extents:
       spatial:
-        bbox: [-124.67615 24.6481, -66.98426 49.0004]
+        bbox: [-124.67615, 24.6481, -66.98426, 49.0004]
         crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
       temporal:
         begin: null
@@ -115,10 +115,36 @@ resources:
           dbname: ${POSTGRES_DB}
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
-        table: npdes_withmeasure
+        table: npdes_pts
         id_field: source_fea
         uri_field: uri
         geom_field: geom
+        
+  Ohio-NPDES-Individual:
+    type: collection
+    title: OHIO EPA NPDES Individual Permits
+    description: OHIO EPA NPDES Individual Permits for Wastewater Treatment Plants
+    keywords:
+        - Existing Sites
+   #   template: jsonld/wwtp.jsonld
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-170,15,-51,72]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: ESRI
+        data: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
+        id_field: OHIO_EPA_NO
 
   wy/gages:
     type: collection
