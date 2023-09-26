@@ -119,3 +119,25 @@ resources:
         id_field: source_fea
         uri_field: uri
         geom_field: geom
+
+  wy/gages:
+    type: collection
+    title: Wyoming Gages
+    description: Gages from Wyoming State Engineers Office
+    keywords:
+      - wyoming
+      - gage
+    links:
+      - <<: *data-source
+        href: https://seoflow.wyo.gov/
+    extents:
+      spatial:
+        bbox: [-111.06,40.99,-104.05,45.01]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider
+        table: wy_gages
+        id_field: id
