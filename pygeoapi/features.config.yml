@@ -146,10 +146,60 @@ resources:
         data: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
         id_field: OHIO_EPA_NO
 
+  co/gages:
+    type: collection
+    title: Colorado Gages
+    description: Gages from Colorado Division of Water Resources
+    linked-data:
+      item_template: jsonld/co.j2
+    keywords:
+      - colorado
+      - gage
+    links:
+      - <<: *data-source
+        href: https://dwr.colorado.gov/
+    extents:
+      spatial:
+        bbox: [-109.06, 36.99,-102.04, 41.00]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider
+        table: co_gages
+        id_field: id
+
+  mt/gages:
+    type: collection
+    title: Montana Gages
+    description: Gages from Montana Department of Natural Resources 
+    linked-data:
+      item_template: jsonld/mt.j2
+    keywords:
+      - montana
+      - gage
+    links:
+      - <<: *data-source
+        href: https://gis.dnrc.mt.gov/apps/stage/
+    extents:
+      spatial:
+        bbox: [-116.05, 44.36, -104.04, 49.00]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider
+        table: mt_gages
+        id_field: id
+
   ne/gages:
     type: collection
     title: Nebraska Gages
     description: Gages from Nebraska Department of Natural Resources
+    linked-data:
+      item_template: jsonld/ne.j2
     keywords:
       - nebraska
       - gage
@@ -168,10 +218,36 @@ resources:
         table: ne_gages
         id_field: id
 
+  nv/gages:
+    type: collection
+    title: Nevada Gages
+    description: Gages from Nevada Division of Water Resources
+    linked-data:
+      item_template: jsonld/nv.j2
+    keywords:
+      - nevada
+      - gage
+    links:
+      - <<: *data-source
+        href: http://water.nv.gov/
+    extents:
+      spatial:
+        bbox: [-120.01, 35.00, -114.04, 42.00]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider
+        table: nv_gages
+        id_field: id
+
   wy/gages:
     type: collection
     title: Wyoming Gages
     description: Gages from Wyoming State Engineers Office
+    linked-data:
+      item_template: jsonld/wy.j2
     keywords:
       - wyoming
       - gage

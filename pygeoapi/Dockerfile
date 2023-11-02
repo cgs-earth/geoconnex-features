@@ -29,4 +29,7 @@
 
 FROM geopython/pygeoapi:latest
 
+ADD ./provider/postgresql.py /pygeoapi/pygeoapi/provider/postgresql.py
+ADD ./templates /pygeoapi/pygeoapi/templates/jsonld
+
 ADD ./features.config.yml /pygeoapi/local.config.yml
