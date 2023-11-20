@@ -3,7 +3,7 @@ This repository hosts code to download, process, and deploy provisional OGC-API 
 
 Datasets are organized in the `collections` directory. 
 
-The features are deployed as Geoconnex-compliant landing pages with JSON-LD embedded metadata at https://features.internetofwater.dev. The deployment configuration for these pages is in the `pygeoapi` directory
+The features are deployed as Geoconnex-compliant landing pages with JSON-LD embedded metadata at https://features.internetofwater.dev. The deployment configuration for these pages is in the `pygeoapi` directory. The data is hosted in [Hydroshare](https://www.hydroshare.org/resource/495b65e56e994289baaa5feeb401358e/).
 
 
 
