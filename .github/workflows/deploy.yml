@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Generate sql data
         uses: cgs-earth/hydrodump-action@0.3.1
@@ -29,7 +29,7 @@ jobs:
           resource: 495b65e56e994289baaa5feeb401358e
 
       - name: Set up Cloud SDK
-        uses: "google-github-actions/auth@v1"
+        uses: "google-github-actions/auth@v2"
         with:
           credentials_json: ${{ secrets.GCP_SA_TOKEN }}
 
