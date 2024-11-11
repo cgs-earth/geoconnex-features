@@ -145,7 +145,43 @@ resources:
         name: ESRI
         data: https://geo.epa.ohio.gov/arcgis/rest/services/SurfaceWater/NPDES/MapServer/0
         id_field: OHIO_EPA_NO
-
+        
+  Utah-Water-Systems:
+    type: collection
+    title: Utah Water Systems
+    description: Utah Water Systems across Utah DWRi, DWRe and DDW
+    keywords:
+      - water systems
+    #   template: jsonld/wwtp.jsonld
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/UtahWaterSystems_Geoconnex2_WFL1/FeatureServer/5
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-170, 15, -51, 72]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: ESRI
+        data: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/UtahWaterSystems_Geoconnex2_WFL1/FeatureServer/5
+        id_field: OBJECTID
+        properties:
+          - OBJECTID
+          - Geoconnex
+          - PWS_URI
+          - System_Name
+          - MERGE_SRC
+          - STATUS
+          - ENDYEAR
+          - DWSYSNUM
+          - WRLINK
+          
   co/gages:
     type: collection
     title: Colorado Gages
