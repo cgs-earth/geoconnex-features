@@ -184,6 +184,8 @@ resources:
           - STATUS
           - ENDYEAR
           - DWSYSNUM
+          - WATERRESID
+          - WRID
           - WRLINK
           
   co/gages:
