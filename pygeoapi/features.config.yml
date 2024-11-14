@@ -156,7 +156,10 @@ resources:
     description: Utah Water Systems across Utah DWRi, DWRe and DDW
     keywords:
       - water systems
-    #   template: jsonld/wwtp.jsonld
+    linked-data:
+      context:
+        - schema: https://schema.org/
+          PWS_URI: schema:about
     links:
       - type: application/html
         rel: canonical
