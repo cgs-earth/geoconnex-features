@@ -157,7 +157,7 @@ resources:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer
+        href: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer/0
         hreflang: en-US
     extents:
       spatial:
@@ -169,7 +169,7 @@ resources:
     providers:
       - type: feature
         name: ESRI
-        data: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer
+        data: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer/0
         id_field: OBJECTID
         properties:
           - OBJECTID
