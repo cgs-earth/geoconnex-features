@@ -164,7 +164,7 @@ resources:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/UtahWaterSystems_Geoconnex2_WFL1/FeatureServer/5
+        href: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer/0
         hreflang: en-US
     extents:
       spatial:
@@ -176,20 +176,26 @@ resources:
     providers:
       - type: feature
         name: ESRI
-        data: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/UtahWaterSystems_Geoconnex2_WFL1/FeatureServer/5
+        data: https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Utah_Water_Systems/FeatureServer/0
         id_field: OBJECTID
         properties:
           - OBJECTID
-          - Geoconnex
-          - PWS_URI
-          - System_Name
-          - MERGE_SRC
-          - STATUS
-          - ENDYEAR
-          - DWSYSNUM
+          - WRENAME 
           - WATERRESID
-          - WRID
-          - WRLINK
+          - DDW_ID
+          - DDW_EPA_ID
+          - DWRi_SYSTEM_ID
+          - DDW_EPA_TYPE
+          - DDW_Status
+          - DWRe_Status
+          - DWRi_System_status
+          - Utah_Geoconnex_uri
+          - PWS_Geoconnex_uri
+          - DWRi_URL
+          - DDW_URL
+          - SDWIS_link
+          - Echo_URL
+          - MERGE_SRC
           
   co/gages:
     type: collection
