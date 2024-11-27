@@ -82,6 +82,10 @@ metadata:
     country: USA
     email: bwebb@lincolninst.edu
     url: https://internetofwater.org
+    phone: +1-617-661-3016
+    fax: +1-617-661-7235
+    hours: Hours of Service
+    instructions: During hours of service.  Off on weekends.
     role: pointOfContact
 
 resources:
@@ -152,7 +156,10 @@ resources:
     description: Utah Water Systems across Utah DWRi, DWRe and DDW
     keywords:
       - water systems
-    #   template: jsonld/wwtp.jsonld
+    linked-data:
+      context:
+        - schema: https://schema.org/
+          PWS_URI: schema:about
     links:
       - type: application/html
         rel: canonical
