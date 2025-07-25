@@ -27,7 +27,7 @@
 #
 # =================================================================
 
-FROM geopython/pygeoapi:latest
+FROM internetofwater/pygeoapi:latest
 
 ADD ./provider/postgresql.py /pygeoapi/pygeoapi/provider/postgresql.py
 ADD ./templates /pygeoapi/pygeoapi/templates/jsonld
